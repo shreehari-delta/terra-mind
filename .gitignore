@@ -1,0 +1,30 @@
+$gitignore = @"
+node_modules/
+.env
+__pycache__/
+*.pyc
+.venv/
+dist/
+build/
+.DS_Store
+"@
+Set-Content -Path .gitignore -Value $gitignore
+
+# Create docker-compose.yml for local database and queue
+$dockerCompose = @"
+version: '3.8'
+services:
+  mongodb:
+    image: mongo:6.0
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+volumes:
+  mongo_data:
+"@
+Set-Content -Path docker-compose.yml -Value $dockerCompose
