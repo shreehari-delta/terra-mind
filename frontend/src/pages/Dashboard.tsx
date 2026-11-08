@@ -14,7 +14,7 @@ export default function Dashboard() {
   const navigate = useNavigate();
   
   // Upload & Analysis State
-  const [file, setFile] = useState<File | null>(null);
+  const [_file, setFile] = useState<File | null>(null);
   const [loading, setLoading] = useState(false);
   const [results, setResults] = useState<any | null>(null);
   const [error, setError] = useState<string | null>(null);
