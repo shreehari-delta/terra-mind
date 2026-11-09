@@ -193,6 +193,12 @@ export default function Dashboard() {
                 </div>
               )}
             </div>
+            <button 
+              onClick={() => { throw new Error("Sentry Frontend Test Error!"); }}
+              style={{ padding: "10px", background: "red", color: "white" }}
+            >
+              Trigger Test Error
+            </button>
 
             {/* Results Section */}
             <div className="bg-slate-900 border border-slate-800 rounded-xl p-6">
