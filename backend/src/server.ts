@@ -22,7 +22,9 @@ Sentry.init({
 // ==========================================
 // 2. LOGGER INITIALIZATION (Better Stack)
 // ==========================================
-const logtail = new Logtail(process.env.BETTER_STACK_TOKEN as string);
+const logtail = new Logtail(process.env.BETTER_STACK_TOKEN as string, {
+  endpoint: "https://s2827680.us-west-2a.betterstackdata.com"
+});
 export const logger = winston.createLogger({
   transports: [
     new winston.transports.Console(), 
